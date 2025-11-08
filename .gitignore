@@ -9,3 +9,12 @@ tsconfig.tsbuildinfo
 private/
 .replit
 replit.nix
+
+aboutrs/.DS_Store
+# trunk output folder
+aboutrs/dist
+aboutrs/target
+# Rust compile target directories:
+aboutrs/target_ra
+aboutrs/target_wasm
+aboutrs/.lycheecache
