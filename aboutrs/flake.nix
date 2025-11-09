@@ -1,5 +1,5 @@
 {
-  description = "eframe devShell";
+  description = "weebsite devShell for (rust(eframe) + quartzv4(nodejs))";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -48,6 +48,9 @@
             xorg.libXrandr
             xorg.libXi
             xorg.libX11
+
+            # for weebsite quartzv4
+            nodejs
 
           ];
 
