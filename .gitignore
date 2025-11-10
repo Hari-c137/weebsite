@@ -9,6 +9,7 @@ tsconfig.tsbuildinfo
 private/
 .replit
 replit.nix
+target
 
 aboutrs/.DS_Store
 # trunk output folder
