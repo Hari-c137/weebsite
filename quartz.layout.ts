@@ -5,11 +5,12 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
+  beforeBody: [],
   afterBody: [],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/Hari-c137",
- //     "Discord Community": "https://discord.gg/cRFFHYye7t",
+      Codeberg: "https://codeberg.org/clearlyopaque",
     },
   }),
 }
@@ -36,7 +37,7 @@ export const defaultContentPageLayout: PageLayout = {
           grow: true,
         },
         { Component: Component.Darkmode() },
-        // { Component: Component.ReaderMode() },
+        { Component: Component.ReaderMode() },
       ],
     }),
     Component.Explorer(),
