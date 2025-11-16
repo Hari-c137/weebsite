@@ -3,7 +3,7 @@ import * as Plugin from "./quartz/plugins"
 
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: " SecondBrain ",
+    pageTitle: "Graveyard",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -56,8 +56,8 @@ const config: QuartzConfig = {
       }),
       Plugin.SyntaxHighlighting({
         theme: {
-          light: "vitesse-light",
-          dark: "vitesse-black",
+          light: "github-light",
+          dark: "github-dark",
         },
         keepBackground: false,
       }),
