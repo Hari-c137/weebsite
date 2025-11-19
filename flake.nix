@@ -1,9 +1,8 @@
 {
-  description = "weebsite devShell for (rust(eframe) + quartzv4(nodejs))";
+  description = "weebsite devShell quartzv4(nodejs)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    rust-overlay.url = "github:oxalica/rust-overlay";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -11,43 +10,22 @@
     {
       self,
       nixpkgs,
-      rust-overlay,
       flake-utils,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
       let
-        overlays = [ (import rust-overlay) ];
-        pkgs = import nixpkgs { inherit system overlays; };
+        pkgs = import nixpkgs { inherit system; };
       in
       with pkgs;
       {
         devShells.default = mkShell rec {
           buildInputs = [
             # Rust
-            (rust-bin.stable.latest.default.override {
-              targets = [
-                "wasm32-unknown-unknown"
-                "x86_64-unknown-linux-gnu"
-              ];
-            })
-            trunk
-            openssl
-            pkg-config
-            libxkbcommon
-            libGL
-            fontconfig
-            wayland
-            xorg.libXcursor
-            xorg.libXrandr
-            xorg.libXi
-            xorg.libX11
             nodejs
 
           ];
-
-          LD_LIBRARY_PATH = "${lib.makeLibraryPath buildInputs}";
         };
       }
     );
